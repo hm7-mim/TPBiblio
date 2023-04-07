@@ -4,12 +4,12 @@ import com.app.biblio.models.Library;
 import com.app.biblio.repositories.LibraryRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
+
 public class LibraryService {
     private final LibraryRepository libraryRepository;
 

@@ -10,6 +10,7 @@ import jakarta.persistence.Id;
 @Entity
 @Table(name = "editors")
 @Data
+
 public class Editor {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

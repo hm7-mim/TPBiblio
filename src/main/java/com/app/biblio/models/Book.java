@@ -1,19 +1,23 @@
 package com.app.biblio.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
-import jakarta.persistence.Id;
+import java.util.List;
 
 @Entity
 @Table(name = "books")
 @Data
+
 public class Book {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
     private String title;
+    private String author;
+    private String description;
+
+    @ManyToMany(mappedBy = "readingList")
+    private List<User> users;
+
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int tome;
 }

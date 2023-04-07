@@ -4,13 +4,13 @@ import com.app.biblio.models.User;
 import com.app.biblio.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
 import java.util.Optional;
 
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
+
 public class UserController {
     private final UserService userService;
 

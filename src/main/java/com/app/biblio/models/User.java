@@ -1,17 +1,22 @@
 package com.app.biblio.models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
-import jakarta.persistence.Id;
+import java.util.List;
 
 @Entity
 @Table(name = "users")
 @Data
+
 public class User {
     @Id
+    private Long id;
+    private String username;
+    private String password;
+
+    @ManyToMany
+    private List<Book> readingList;
+
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private String login;
     private String role;
